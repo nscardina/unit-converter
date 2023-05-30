@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "meter",
+    "units": [
+        {
+            "fullName": "meter",
+            "abbreviation": "m",
+            "factor": "1"
+        },
+        {
+            "fullName": "kilometer",
+            "abbreviation": "km",
+            "factor": "1000"
+        }
+    ]
+}

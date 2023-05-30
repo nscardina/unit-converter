@@ -1,0 +1,9 @@
+{
+    "primaryUnitCategory": "meter",
+    "categories": [
+        {
+            "name": "meter",
+            "factor": "1"
+        }
+    ]
+}
