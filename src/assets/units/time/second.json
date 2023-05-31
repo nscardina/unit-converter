@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "second",
+    "units": [
+        {
+            "fullName": "second",
+            "abbreviation": "s",
+            "factor": "1"
+        },
+        {
+            "fullName": "hour",
+            "abbreviation": "hr",
+            "factor": "60"
+        }
+    ]
+}

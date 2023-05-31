@@ -64,6 +64,13 @@ export type UnitType = {
 }
 
 /**
+ * Type of the {@linkcode Units} variable after being unwrapped from its `Promise`.
+ */
+export type UnitsType = {
+    [key: string]: UnitType | undefined
+}
+
+/**
  * Parses a JSON object representing a {@linkcode Unit}, returning the object if successful and 
  * throwing an error if not.
  * @param {any} jsonInput JSON to parse into a `Unit`.
@@ -165,11 +172,11 @@ const parseUnitType = async(unitTypeName: string): Promise<UnitType> => {
 /**
  * Object which holds all currently available units for the Unit Converter application.
  */
-const Units: Promise<{
+const Units: {
     [key: string]: UnitType | undefined
-}> = Load.Json(new URL('/src/assets/units/types.json', window.location.href))
+} = await Load.Json(new URL('/src/assets/units/types.json', window.location.href))
 .catch(reason => { throw new Error(reason) })
-.then(value => {
+.then(async value => {
         if (!Array.isArray(value)) {
             throw new Error(`Error: ${value} is not an array`)
         }
@@ -182,13 +189,11 @@ const Units: Promise<{
             }
 
             // Load each unit type into an array.
-            units[unitTypeName] = parseUnitType(unitTypeName)
+            units[unitTypeName] = await parseUnitType(unitTypeName)
         }
 
         return units
     }
-
-    
 )
 
 export default Units

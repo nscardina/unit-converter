@@ -1,35 +1,32 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'
+import { Dropdown, DropdownButton } from 'react-bootstrap'
+import Units, { Unit, UnitsType } from './Unit'
+import { useState } from 'react'
+import { capitalizeFirstLetter } from './misc'
+import UnitTypeChooserMenu from './ui/UnitTypeChooserMenu'
+import UnitPickerMenu from './ui/UnitPickerMenu'
 
 function App() {
-  const [count, setCount] = useState(0)
 
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	const [currentUnitTypeName, setCurrentUnitTypeName] = useState<string>('length')
+	const [currentUnit1, setCurrentUnit1] = useState<Unit>(Units[currentUnitTypeName]!.primaryUnitCategory.units[0])
+	const [currentUnit2, setCurrentUnit2] = useState<Unit>(Units[currentUnitTypeName]!.primaryUnitCategory.units[1])
+
+	function handleUnitTypeNameChange(newName: string) {
+		setCurrentUnitTypeName(newName)
+		setCurrentUnit1(Units[newName]!.primaryUnitCategory.units[0])
+		setCurrentUnit2(Units[newName]!.primaryUnitCategory.units[1])
+	}
+
+	return (
+		<>
+			<UnitTypeChooserMenu unitTypeName={currentUnitTypeName} clickHandler={handleUnitTypeNameChange} />
+
+			<UnitPickerMenu unit={currentUnit1} unitTypeName={currentUnitTypeName} onClickHandler={setCurrentUnit1} />
+			<UnitPickerMenu unit={currentUnit2} unitTypeName={currentUnitTypeName} onClickHandler={setCurrentUnit2} />
+		</>
+	)
 }
 
 export default App
