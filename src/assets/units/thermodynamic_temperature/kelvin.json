@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "kelvin",
+    "units": [
+        {
+            "fullName": "kelvin",
+            "abbreviation": "K",
+            "factor": "1"
+        },
+        {
+            "fullName": "kilokelvin",
+            "abbreviation": "kK",
+            "factor": "1000"
+        }
+    ]
+}

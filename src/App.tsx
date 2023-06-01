@@ -9,6 +9,8 @@ import { Col, Container, Form, Row } from 'react-bootstrap'
 
 function App() {
 
+	Decimal.set({precision: 1e+9, toExpPos: 9e15})
+
 	let [currentUnitTypeName, setCurrentUnitTypeName] = useState<string>('length')
 	let [currentUnit1, setCurrentUnit1] = useState<Unit>(Units[currentUnitTypeName]!.primaryUnitCategory.units[0])
 	let [currentUnit1Category, setCurrentUnit1Category] = useState<UnitCategory>(Units[currentUnitTypeName]!.primaryUnitCategory)
@@ -54,9 +56,11 @@ function App() {
 			setUnit2Quantity(unit2)
 		} catch {
 			if (!newAmount) { 
+				setUnit1Quantity('')
 				setUnit2Quantity('')
 			}
 			else {
+				setUnit1Quantity(newAmount)
 				setUnit2Quantity('Error')
 			}
 		}

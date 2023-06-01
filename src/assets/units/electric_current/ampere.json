@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "ampere",
+    "units": [
+        {
+            "fullName": "ampere",
+            "abbreviation": "A",
+            "factor": "1"
+        },
+        {
+            "fullName": "kiloampere",
+            "abbreviation": "kA",
+            "factor": "1000"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "radian",
+    "units": [
+        {
+            "fullName": "radian",
+            "abbreviation": "rad",
+            "factor": "1"
+        },
+        {
+            "fullName": "kiloradian",
+            "abbreviation": "krad",
+            "factor": "1000"
+        }
+    ]
+}

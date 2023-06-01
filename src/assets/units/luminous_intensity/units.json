@@ -1,0 +1,9 @@
+{
+    "primaryUnitCategory": "candela",
+    "categories": [
+        {
+            "name": "candela",
+            "factor": "1"
+        }
+    ]
+}

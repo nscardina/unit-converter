@@ -1,4 +1,4 @@
-import { Dropdown, DropdownButton } from "react-bootstrap";
+import { Dropdown } from "react-bootstrap";
 import Units, { Unit, UnitCategory } from "../Unit";
 import React from "react";
 
@@ -11,8 +11,6 @@ interface Props {
 
 export default function UnitPickerMenu({ unit, unitTypeName, onClickHandler, correspondingMenuRef }: Props) {
 
-    console.log(Dropdown.Toggle)
-
     return (
         <>
             <Dropdown>
@@ -21,14 +19,15 @@ export default function UnitPickerMenu({ unit, unitTypeName, onClickHandler, cor
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     {Units[unitTypeName]!.categories.map(category => (
-                        <Dropdown drop="end" className="dropright">
+                        <Dropdown drop="end" className="dropright" key={category.primaryUnit.fullName}>
                             <Dropdown.Toggle variant="custom">
                                 {category.primaryUnit.fullName}
                             </Dropdown.Toggle>
                             <Dropdown.Menu align="end" >
                                 {category.units.map(unit => (
-                                    <Dropdown.Item onClick={() => onClickHandler(unit, category, 
-                                        (correspondingMenuRef.current?.value) as string)}>
+                                    <Dropdown.Item onClick={() => 
+                                        onClickHandler(unit, category, (correspondingMenuRef.current?.value) as string)}
+                                        key={unit.fullName}>
                                         {unit.fullName}
                                     </Dropdown.Item>
                                 ))}

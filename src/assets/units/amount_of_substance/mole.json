@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "mole",
+    "units": [
+        {
+            "fullName": "mole",
+            "abbreviation": "mol",
+            "factor": "1"
+        },
+        {
+            "fullName": "kilomole",
+            "abbreviation": "kmol",
+            "factor": "1000"
+        }
+    ]
+}

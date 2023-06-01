@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "gram",
+    "units": [
+        {
+            "fullName": "gram",
+            "abbreviation": "g",
+            "factor": "1"
+        },
+        {
+            "fullName": "kilogram",
+            "abbreviation": "kg",
+            "factor": "1000"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "primaryUnitCategory": "radian",
+    "categories": [
+        {
+            "name": "radian",
+            "factor": "1"
+        }
+    ]
+}

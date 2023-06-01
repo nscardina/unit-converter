@@ -1,4 +1,10 @@
 [
+    "time",
     "length",
-    "time"
+    "mass",
+    "electric_current",
+    "thermodynamic_temperature",
+    "amount_of_substance",
+    "luminous_intensity",
+    "plane_angle"
 ]

@@ -1,0 +1,9 @@
+{
+    "primaryUnitCategory": "gram",
+    "categories": [
+        {
+            "name": "gram",
+            "factor": "1"
+        }
+    ]
+}

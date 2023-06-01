@@ -1,0 +1,9 @@
+{
+    "primaryUnitCategory": "ampere",
+    "categories": [
+        {
+            "name": "ampere",
+            "factor": "1"
+        }
+    ]
+}

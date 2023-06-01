@@ -1,0 +1,15 @@
+{
+    "primaryUnit": "candela",
+    "units": [
+        {
+            "fullName": "candela",
+            "abbreviation": "cd",
+            "factor": "1"
+        },
+        {
+            "fullName": "kilocandela",
+            "abbreviation": "kcd",
+            "factor": "1000"
+        }
+    ]
+}

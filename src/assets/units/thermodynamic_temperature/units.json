@@ -1,0 +1,9 @@
+{
+    "primaryUnitCategory": "kelvin",
+    "categories": [
+        {
+            "name": "kelvin",
+            "factor": "1"
+        }
+    ]
+}
