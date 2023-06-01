@@ -1,5 +1,6 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import Units, { Unit, UnitCategory } from "../Unit";
+import React from "react";
 
 interface Props {
     unit: Unit,
@@ -8,20 +9,35 @@ interface Props {
     correspondingMenuRef: React.RefObject<any>
 }
 
-export default function UnitPickerMenu({unit, unitTypeName, onClickHandler, correspondingMenuRef}: Props) {
+export default function UnitPickerMenu({ unit, unitTypeName, onClickHandler, correspondingMenuRef }: Props) {
+
+    console.log(Dropdown.Toggle)
+
     return (
-        
-        <DropdownButton title={unit.abbreviation}>
-            {Units[unitTypeName]!.categories.map(category => (
-                <DropdownButton drop="end" title={category.primaryUnit.fullName}>
-                    {category.units.map(unit => (
-                        <Dropdown.Item onClick={() => onClickHandler(unit, category, 
-                        (correspondingMenuRef.current?.value) as string)}>
-                            {unit.fullName}
-                        </Dropdown.Item>
+        <>
+            <Dropdown>
+                <Dropdown.Toggle>
+                    {unit.abbreviation}
+                </Dropdown.Toggle>
+                <Dropdown.Menu>
+                    {Units[unitTypeName]!.categories.map(category => (
+                        <Dropdown drop="end" className="dropright">
+                            <Dropdown.Toggle variant="custom">
+                                {category.primaryUnit.fullName}
+                            </Dropdown.Toggle>
+                            <Dropdown.Menu align="end" >
+                                {category.units.map(unit => (
+                                    <Dropdown.Item onClick={() => onClickHandler(unit, category, 
+                                        (correspondingMenuRef.current?.value) as string)}>
+                                        {unit.fullName}
+                                    </Dropdown.Item>
+                                ))}
+                            </Dropdown.Menu>
+                        </Dropdown>
                     ))}
-                </DropdownButton>
-            ))}
-		</DropdownButton>
+                </Dropdown.Menu>
+            </Dropdown>
+        </>
+
     )
 }

@@ -96,7 +96,7 @@ function App() {
 						=
 					</Col>
 					<Col className="d-flex">
-						<Form.Control type="text" value={unit2Quantity.toString()} onChange={(e) => handleUnit2QuantityChange(e.target.value)}></reactBootstrap.Form.Control>
+						<Form.Control type="text" value={unit2Quantity.toString()} onChange={(e) => handleUnit2QuantityChange(e.target.value)}></Form.Control>
 						<UnitPickerMenu correspondingMenuRef={unit2Picker} unit={currentUnit2} 
 						unitTypeName={currentUnitTypeName} onClickHandler={handleUnit2Change} />
 					</Col>
