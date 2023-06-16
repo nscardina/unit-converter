@@ -1,6 +1,7 @@
 import { Dropdown } from "react-bootstrap";
 import Units, { Unit, UnitCategory } from "../Unit";
 import React from "react";
+import { capitalizeFirstLetter } from "../misc";
 
 interface Props {
     unit: Unit,
@@ -21,7 +22,7 @@ export default function UnitPickerMenu({ unit, unitTypeName, onClickHandler, cor
                     {Units[unitTypeName]!.categories.map(category => (
                         <Dropdown drop="end" className="dropright" key={category.primaryUnit.fullName}>
                             <Dropdown.Toggle variant="custom">
-                                {category.primaryUnit.fullName}
+                                {capitalizeFirstLetter(category.name)}
                             </Dropdown.Toggle>
                             <Dropdown.Menu align="end" >
                                 {category.units.map(unit => (

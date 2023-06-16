@@ -1,8 +1,10 @@
 {
-    "primaryUnitCategory": "radian",
+    "primaryUnitCategory": "metric",
+    "unit1": "radian",
+    "unit2": "kiloradian",
     "categories": [
         {
-            "name": "radian",
+            "name": "metric",
             "factor": "1"
         }
     ]

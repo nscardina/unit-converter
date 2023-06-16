@@ -1,9 +1,15 @@
 {
-    "primaryUnitCategory": "meter",
+    "primaryUnitCategory": "metric",
+    "unit1": "meter",
+    "unit2": "kilometer",
     "categories": [
         {
-            "name": "meter",
+            "name": "metric",
             "factor": "1"
+        },
+        {
+            "name": "international",
+            "factor": "0.0254"
         }
     ]
 }

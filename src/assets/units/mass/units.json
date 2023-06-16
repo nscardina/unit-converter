@@ -1,8 +1,10 @@
 {
-    "primaryUnitCategory": "gram",
+    "primaryUnitCategory": "metric",
+    "unit1": "gram",
+    "unit2": "kilogram",
     "categories": [
         {
-            "name": "gram",
+            "name": "metric",
             "factor": "1"
         }
     ]

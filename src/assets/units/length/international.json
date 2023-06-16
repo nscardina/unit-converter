@@ -1,0 +1,50 @@
+{
+    "primaryUnit": "inch",
+    "units": [
+        {
+            "fullName": "twip",
+            "abbreviation": "twip",
+            "factor": "1 / 72 / 20"
+        },
+        {
+            "fullName": "mil",
+            "abbreviation": "mil",
+            "factor": "0.001"
+        },
+        {
+            "fullName": "point",
+            "abbreviation": "p",
+            "factor": "1 / 72"
+        },
+        {
+            "fullName": "pica",
+            "abbreviation": "P",
+            "factor": "1 / 6"
+        },
+        {
+            "fullName": "inch",
+            "abbreviation": "in",
+            "factor": "1"
+        },
+        {
+            "fullName": "foot",
+            "abbreviation": "ft",
+            "factor": "12"
+        },
+        {
+            "fullName": "yard",
+            "abbreviation": "yd",
+            "factor": "36"
+        },
+        {
+            "fullName": "mile",
+            "abbreviation": "mi",
+            "factor": "5280"
+        },
+        {
+            "fullName": "league",
+            "abbreviation": "le",
+            "factor": "15840"
+        }
+    ]
+}

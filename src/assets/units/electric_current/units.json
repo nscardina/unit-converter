@@ -1,5 +1,7 @@
 {
     "primaryUnitCategory": "ampere",
+    "unit1": "ampere",
+    "unit2": "kiloampere",
     "categories": [
         {
             "name": "ampere",

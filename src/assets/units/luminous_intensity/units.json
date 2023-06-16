@@ -1,8 +1,10 @@
 {
-    "primaryUnitCategory": "candela",
+    "primaryUnitCategory": "metric",
+    "unit1": "candela",
+    "unit2": "kilocandela",
     "categories": [
         {
-            "name": "candela",
+            "name": "metric",
             "factor": "1"
         }
     ]

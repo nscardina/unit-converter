@@ -12,10 +12,11 @@
   "dependencies": {
     "bootstrap": "^5.3.0",
     "bootstrap-icons": "^1.10.5",
-    "decimal.js": "^10.4.3",
+    "convertible-to-bigint": "github:nscardina/convertible-to-bigint",
     "react": "^18.2.0",
     "react-bootstrap": "^2.7.4",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "ts-fraction": "github:nscardina/ts-fraction"
   },
   "devDependencies": {
     "@types/react": "^18.0.37",

@@ -1,9 +1,5 @@
-import Decimal from "decimal.js"
 import Load from "./Load"
-
-// Make sure we have sufficient precision for any reasonable value that could be passed in through JSON
-Decimal.set({precision: 100000})
-
+import Fraction, { parseExpression } from "ts-fraction"
 /**
  * Type that holds the data needed to represent a unit.
  */
@@ -20,7 +16,7 @@ export type Unit = {
      * Conversion factor expressing how many of this unit are needed to equal one of the primary unit of this 
      * unit's {@linkcode UnitCategory}.
      */
-    readonly factor: Decimal
+    readonly factor: Fraction
 }
 
 /**
@@ -34,6 +30,10 @@ export type UnitCategory = {
      */
     readonly primaryUnit: Unit,
     /**
+     * Name to display in menus to represent this category.
+     */
+    readonly name: string,
+    /**
      * Array of `Unit`s in this `UnitCategory`.
      */
     readonly units: Readonly<Unit[]>,
@@ -44,7 +44,7 @@ export type UnitCategory = {
      * needed to equal one of the primary unit of this `UnitCategory`'s `UnitType`'s 
      * `primaryUnitCategory.
      */
-    readonly factor: Decimal
+    readonly factor: Fraction
 }
 
 /**
@@ -56,7 +56,14 @@ export type UnitType = {
      * {@linkcode UnitCategory.factor factor} fields convert to.
      */
     readonly primaryUnitCategory: UnitCategory,
-    
+    /**
+     * `Unit` to be used as the default unit 1 (displayed on the left dropdown).
+     */
+    readonly unit1: Unit,
+    /**
+     * `Unit` to be used as the default unit 2 (displayed on the right dropdown).
+     */
+    readonly unit2: Unit,
     /**
      * All `UnitCategory` objects in this `UnitType`.
      */
@@ -83,7 +90,7 @@ const parseUnit = (jsonInput: any): Unit => {
         return Object.freeze({
             fullName: Object.freeze(jsonInput.fullName),
             abbreviation: Object.freeze(jsonInput.abbreviation),
-            factor: Object.freeze(new Decimal(jsonInput.factor))
+            factor: Object.freeze(parseExpression(jsonInput.factor))
         })
     } else {
         throw new Error(`Error: ${jsonInput.toString()} does not contain the correct fields to become a Unit`)
@@ -95,11 +102,11 @@ const parseUnit = (jsonInput: any): Unit => {
  * and throwing an error if not.
  * @param {string} unitTypeName name of the {@linkcode UnitType} that this `UnitCategory` belongs to.
  * @param {string} unitCategoryName name of this `UnitCategory`.
- * @param {Decimal} factor conversion factor from the primary unit of this `UnitCategory` to the primary unit 
+ * @param {Fraction} factor conversion factor from the primary unit of this `UnitCategory` to the primary unit 
  * of the primary `UnitCategory` of this `UnitCategory`'s `UnitType`.
  * @returns `Promise` of constructed `UnitCategory` object.
  */
-const parseUnitCategory = async(unitTypeName: string, unitCategoryName: string, factor: Decimal): Promise<UnitCategory> => {
+const parseUnitCategory = async(unitTypeName: string, unitCategoryName: string, factor: Fraction): Promise<UnitCategory> => {
     const jsonInput = await Load.Json(new URL(`/src/assets/units/${unitTypeName}/${unitCategoryName}.json`, window.location.href))
     .catch(reason => { throw new Error(reason) })
     if (typeof(jsonInput.primaryUnit) === 'string' &&
@@ -118,6 +125,7 @@ const parseUnitCategory = async(unitTypeName: string, unitCategoryName: string, 
 
         return {
             primaryUnit: Object.freeze(primaryUnit),
+            name: Object.freeze(unitCategoryName),
             units: Object.freeze(unitsArray),
             factor: Object.freeze(factor)
         }
@@ -138,6 +146,8 @@ const parseUnitType = async(unitTypeName: string): Promise<UnitType> => {
     .catch(reason => { throw new Error(reason) })
 
     if (typeof(jsonInput.primaryUnitCategory) === 'string' &&
+        typeof(jsonInput.unit1) === 'string' &&
+        typeof(jsonInput.unit2) === 'string' &&
         Array.isArray(jsonInput.categories)) {
         
         let unitCategoryPromisesArray: Promise<UnitCategory>[] = []
@@ -150,18 +160,30 @@ const parseUnitType = async(unitTypeName: string): Promise<UnitType> => {
             }
 
             // Load the .json file for each unit category.
-            unitCategoryPromisesArray.push(parseUnitCategory(unitTypeName, categoryPair.name, new Decimal(categoryPair.factor)))
+            unitCategoryPromisesArray.push(parseUnitCategory(unitTypeName, categoryPair.name, Fraction.parseString(categoryPair.factor)))
         }
 
         const unitCategories: UnitCategory[] = await Promise.all(unitCategoryPromisesArray)
 
-        const primaryUnitCategory = unitCategories.find(value => value.primaryUnit.fullName === jsonInput.primaryUnitCategory)
+        const primaryUnitCategory = unitCategories.find(value => value.name === jsonInput.primaryUnitCategory)
         if (primaryUnitCategory === undefined) {
             throw new Error(`Error: Primary unit category named ${jsonInput.primaryUnitCategory} not found`)
         }
 
+        const unit1 = primaryUnitCategory.units.find(unit => unit.fullName === jsonInput.unit1)
+        if (unit1 === undefined) {
+            throw new Error(`Error: Unit 1 named ${jsonInput.unit1} not found`)
+        }
+
+        const unit2 = primaryUnitCategory.units.find(unit => unit.fullName === jsonInput.unit2)
+        if (unit2 === undefined) {
+            throw new Error(`Error: Unit 2 named ${jsonInput.unit2} not found`)
+        }
+
         return {
             primaryUnitCategory: Object.freeze(primaryUnitCategory),
+            unit1: Object.freeze(unit1),
+            unit2: Object.freeze(unit2),
             categories: Object.freeze(unitCategories)
         }
     } else {

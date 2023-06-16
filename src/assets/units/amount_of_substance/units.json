@@ -1,5 +1,7 @@
 {
     "primaryUnitCategory": "mole",
+    "unit1": "kilomole",
+    "unit2": "mole",
     "categories": [
         {
             "name": "mole",

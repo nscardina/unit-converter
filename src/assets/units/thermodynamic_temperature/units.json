@@ -1,8 +1,10 @@
 {
-    "primaryUnitCategory": "kelvin",
+    "primaryUnitCategory": "metric",
+    "unit1": "kelvin",
+    "unit2": "kilokelvin",
     "categories": [
         {
-            "name": "kelvin",
+            "name": "metric",
             "factor": "1"
         }
     ]

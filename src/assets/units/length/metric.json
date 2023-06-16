@@ -1,0 +1,130 @@
+{
+    "primaryUnit": "meter",
+    "units": [
+        {
+            "fullName": "quettameter",
+            "abbreviation": "Qm",
+            "factor": "1000000000000000000000000000000"
+        },
+        {
+            "fullName": "ronnameter",
+            "abbreviation": "Rm",
+            "factor": "1000000000000000000000000000"
+        },
+        {
+            "fullName": "yottameter",
+            "abbreviation": "Ym",
+            "factor": "1000000000000000000000000"
+        },
+        {
+            "fullName": "zettameter",
+            "abbreviation": "Zm",
+            "factor": "1000000000000000000000"
+        },
+        {
+            "fullName": "exameter",
+            "abbreviation": "Em",
+            "factor": "1000000000000000000"
+        },
+        {
+            "fullName": "petameter",
+            "abbreviation": "Pm",
+            "factor": "1000000000000000"
+        },
+        {
+            "fullName": "terameter",
+            "abbreviation": "Tm",
+            "factor": "1000000000000"
+        },
+        {
+            "fullName": "gigameter",
+            "abbreviation": "Gm",
+            "factor": "1000000000"
+        },
+        {
+            "fullName": "megameter",
+            "abbreviation": "Mm",
+            "factor": "1000000"
+        },
+        {
+            "fullName": "kilometer",
+            "abbreviation": "km",
+            "factor": "1000"
+        },
+        {
+            "fullName": "hectometer",
+            "abbreviation": "hm",
+            "factor": "100"
+        },
+        {
+            "fullName": "decameter",
+            "abbreviation": "dam",
+            "factor": "10"
+        },
+        {
+            "fullName": "meter",
+            "abbreviation": "m",
+            "factor": "1"
+        },
+        {
+            "fullName": "decimeter",
+            "abbreviation": "dm",
+            "factor": "0.1"
+        },
+        {
+            "fullName": "centimeter",
+            "abbreviation": "cm",
+            "factor": "0.01"
+        },
+        {
+            "fullName": "millimeter",
+            "abbreviation": "mm",
+            "factor": "0.001"
+        },
+        {
+            "fullName": "micrometer",
+            "abbreviation": "μm",
+            "factor": "0.000001"
+        },
+        {
+            "fullName": "nanometer",
+            "abbreviation": "nm",
+            "factor": "0.000000001"
+        },
+        {
+            "fullName": "picometer",
+            "abbreviation": "pm",
+            "factor": "0.000000000001"
+        },
+        {
+            "fullName": "femtometer",
+            "abbreviation": "fm",
+            "factor": "0.000000000000001"
+        },
+        {
+            "fullName": "attometer",
+            "abbreviation": "am",
+            "factor": "0.000000000000000001"
+        },
+        {
+            "fullName": "zeptometer",
+            "abbreviation": "zm",
+            "factor": "0.000000000000000000001"
+        },
+        {
+            "fullName": "yoctometer",
+            "abbreviation": "ym",
+            "factor": "0.000000000000000000000001"
+        },
+        {
+            "fullName": "rontometer",
+            "abbreviation": "rm",
+            "factor": "0.000000000000000000000000001"
+        },
+        {
+            "fullName": "quectometer",
+            "abbreviation": "qm",
+            "factor": "0.000000000000000000000000000001"
+        }
+    ]
+}
