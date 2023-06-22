@@ -11,7 +11,8 @@ function UnitTypeChooserMenu({unitTypeName, clickHandler}: Props) {
 
     return (
 		<>
-			<DropdownButton title={`Unit Type: ${capitalizeFirstLetter(unitTypeName).replace(/_/g, ' ')}`}>
+			<DropdownButton title={`Unit Type: ${capitalizeFirstLetter(unitTypeName).replace(/_/g, ' ')}`}
+			drop="down-centered">
 				<Dropdown.ItemText className="fw-bold text-decoration-underline">SI Base Units</Dropdown.ItemText>
 				{Object.keys(Units).map(unitTypeName => (
 					<Dropdown.Item onClick={() => clickHandler(unitTypeName)} key={unitTypeName}>

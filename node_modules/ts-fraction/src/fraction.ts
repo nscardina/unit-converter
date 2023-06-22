@@ -454,8 +454,8 @@ class Fraction {
 
         // return decimal after removing any zeroes in front of the decimal place.
         decimal = decimal.replace(/^0*(?!\.)/, '')
-        if (/.0+$/.test(decimal)) {
-            decimal = decimal.replace(/.0+$/, '')
+        if (/\.0+$/.test(decimal)) {
+            decimal = decimal.replace(/\.0+$/, '')
         }
         if (negative) {
             decimal = `-${decimal}`
