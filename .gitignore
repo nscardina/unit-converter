@@ -420,5 +420,6 @@ FodyWeavers.xsd
 # JetBrains Rider
 *.sln.iml
 
-# Other files
+# Other files (generated files)
 credits/index.html
+dist/**/*

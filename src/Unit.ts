@@ -107,7 +107,7 @@ const parseUnit = (jsonInput: any): Unit => {
  * @returns `Promise` of constructed `UnitCategory` object.
  */
 const parseUnitCategory = async(unitTypeName: string, unitCategoryName: string, factor: Fraction): Promise<UnitCategory> => {
-    const jsonInput = await Load.Json(new URL(`/src/assets/units/${unitTypeName}/${unitCategoryName}.json`, window.location.href))
+    const jsonInput = await Load.Json(new URL(`/unit-converter/units/${unitTypeName}/${unitCategoryName}.json`, window.location.href))
     .catch(reason => { throw new Error(reason) })
     if (typeof(jsonInput.primaryUnit) === 'string' &&
         Array.isArray(jsonInput.units)) {
@@ -137,12 +137,12 @@ const parseUnitCategory = async(unitTypeName: string, unitCategoryName: string, 
 /**
  * Loads a {@linkcode UnitType} from JSON files.
  * @param unitTypeName Name of the unit type. The unit type's files must be located at 
- * `/src/assets/units/${unitTypeName}.json`.
+ * `/units/${unitTypeName}.json`.
  * @returns the loaded unit type.
  */
 const parseUnitType = async(unitTypeName: string): Promise<UnitType> => {
     // Load units.json file.
-    const jsonInput = await Load.Json(new URL(`/src/assets/units/${unitTypeName}/units.json`, window.location.href))
+    const jsonInput = await Load.Json(new URL(`/unit-converter/units/${unitTypeName}/units.json`, window.location.href))
     .catch(reason => { throw new Error(reason) })
 
     if (typeof(jsonInput.primaryUnitCategory) === 'string' &&
@@ -196,7 +196,7 @@ const parseUnitType = async(unitTypeName: string): Promise<UnitType> => {
  */
 const Units: {
     [key: string]: UnitType | undefined
-} = await Load.Json(new URL('/src/assets/units/types.json', window.location.href))
+} = await Load.Json(new URL('/unit-converter/units/types.json', window.location.href))
 .catch(reason => { throw new Error(reason) })
 .then(async value => {
         if (!Array.isArray(value)) {

@@ -30,9 +30,9 @@ htmlFileStream.write(`
     <nav class="navbar d-flex flex-row">
       <div class="d-flex flex-row  container-fluid">
         <a class="navbar-text nav-link" href="/unit-converter/">
-          <object data="/logo.svg" type="image/svg+xml" width="48pt" height="48pt"></object>
+          <object data="/unit-converter/logo.svg" type="image/svg+xml" width="48pt" height="48pt"></object>
         </a>
-        <a class="navbar-text nav-link fs-4 mx-2" href="/">
+        <a class="navbar-text nav-link fs-4 mx-2" href="/unit-converter/">
           Unit Converter
         </a>
 
@@ -155,7 +155,7 @@ SOFTWARE.`)
 
 htmlFileStream.write(`
 </div>
-<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+<script src="/node_modules/bootstrap/dist/js/bootstrap.bundle.js" type="module"></script>
 </body>
 </html>
 `)
