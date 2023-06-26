@@ -1,0 +1,40 @@
+{
+    "primaryUnit": "pound",
+    "units": [
+        {
+            "fullName": "grain",
+            "abbreviation": "gr",
+            "factor": "1 / 7000"
+        },
+        {
+            "fullName": "dram",
+            "abbreviation": "dr",
+            "factor": "1 / 256"
+        },
+        {
+            "fullName": "ounce",
+            "abbreviation": "oz",
+            "factor": "1 / 16"
+        },
+        {
+            "fullName": "pound",
+            "abbreviation": "lb",
+            "factor": "1"
+        },
+        {
+            "fullName": "quarter",
+            "abbreviation": "qr",
+            "factor": "25"
+        },
+        {
+            "fullName": "short hundredweight",
+            "abbreviation": "cwt",
+            "factor": "100"
+        },
+        {
+            "fullName": "ton (short ton)",
+            "abbreviation": "t",
+            "factor": "2000"
+        }
+    ]
+}

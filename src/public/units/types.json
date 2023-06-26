@@ -6,5 +6,6 @@
     "thermodynamic_temperature",
     "amount_of_substance",
     "luminous_intensity",
-    "plane_angle"
+    "plane_angle",
+    "weight"
 ]

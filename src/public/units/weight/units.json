@@ -1,0 +1,15 @@
+{
+    "primaryUnitCategory": "metric",
+    "unit1": "gram",
+    "unit2": "kilogram",
+    "categories": [
+        {
+            "name": "metric",
+            "factor": "1"
+        },
+        {
+            "name": "US customary",
+            "factor": "0.45359237"
+        }
+    ]
+}

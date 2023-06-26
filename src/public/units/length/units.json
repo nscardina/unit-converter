@@ -10,6 +10,10 @@
         {
             "name": "international",
             "factor": "0.0254"
+        },
+        {
+            "name": "nautical",
+            "factor": "1852"
         }
     ]
 }

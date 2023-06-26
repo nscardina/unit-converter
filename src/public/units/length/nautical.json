@@ -1,0 +1,25 @@
+{
+    "primaryUnit": "nautical mile",
+    "units": [
+        {
+            "fullName": "cable length (international)",
+            "abbreviation": "cable length",
+            "factor": "0.1"
+        },
+        {
+            "fullName": "fathom",
+            "abbreviation": "fm",
+            "factor": "6 / 1852"
+        },
+        {
+            "fullName": "fathom (British Imperial)",
+            "abbreviation": "fm",
+            "factor": "6.08 / 1852"
+        },
+        {
+            "fullName": "nautical mile",
+            "abbreviation": "M",
+            "factor": "1"
+        }
+    ]
+}
