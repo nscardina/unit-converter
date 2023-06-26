@@ -2,14 +2,129 @@
     "primaryUnit": "second",
     "units": [
         {
+            "fullName": "quettasecond",
+            "abbreviation": "Qs",
+            "factor": "1000000000000000000000000000000"
+        },
+        {
+            "fullName": "ronnasecond",
+            "abbreviation": "Rs",
+            "factor": "1000000000000000000000000000"
+        },
+        {
+            "fullName": "yottasecond",
+            "abbreviation": "Ys",
+            "factor": "1000000000000000000000000"
+        },
+        {
+            "fullName": "zettasecond",
+            "abbreviation": "Zs",
+            "factor": "1000000000000000000000"
+        },
+        {
+            "fullName": "exasecond",
+            "abbreviation": "Es",
+            "factor": "1000000000000000000"
+        },
+        {
+            "fullName": "petasecond",
+            "abbreviation": "Ps",
+            "factor": "1000000000000000"
+        },
+        {
+            "fullName": "terasecond",
+            "abbreviation": "Ts",
+            "factor": "1000000000000"
+        },
+        {
+            "fullName": "gigasecond",
+            "abbreviation": "Gs",
+            "factor": "1000000000"
+        },
+        {
+            "fullName": "megasecond",
+            "abbreviation": "Ms",
+            "factor": "1000000"
+        },
+        {
+            "fullName": "kilosecond",
+            "abbreviation": "ks",
+            "factor": "1000"
+        },
+        {
+            "fullName": "hectosecond",
+            "abbreviation": "hs",
+            "factor": "100"
+        },
+        {
+            "fullName": "decasecond",
+            "abbreviation": "das",
+            "factor": "10"
+        },
+        {
             "fullName": "second",
             "abbreviation": "s",
             "factor": "1"
         },
         {
-            "fullName": "hour",
-            "abbreviation": "hr",
-            "factor": "60"
+            "fullName": "decisecond",
+            "abbreviation": "ds",
+            "factor": "0.1"
+        },
+        {
+            "fullName": "centisecond",
+            "abbreviation": "cs",
+            "factor": "0.01"
+        },
+        {
+            "fullName": "millisecond",
+            "abbreviation": "ms",
+            "factor": "0.001"
+        },
+        {
+            "fullName": "microsecond",
+            "abbreviation": "μs",
+            "factor": "0.000001"
+        },
+        {
+            "fullName": "nanosecond",
+            "abbreviation": "ns",
+            "factor": "0.000000001"
+        },
+        {
+            "fullName": "picosecond",
+            "abbreviation": "ps",
+            "factor": "0.000000000001"
+        },
+        {
+            "fullName": "femtosecond",
+            "abbreviation": "fs",
+            "factor": "0.000000000000001"
+        },
+        {
+            "fullName": "attosecond",
+            "abbreviation": "as",
+            "factor": "0.000000000000000001"
+        },
+        {
+            "fullName": "zeptosecond",
+            "abbreviation": "zs",
+            "factor": "0.000000000000000000001"
+        },
+        {
+            "fullName": "yoctosecond",
+            "abbreviation": "ys",
+            "factor": "0.000000000000000000000001"
+        },
+        {
+            "fullName": "rontosecond",
+            "abbreviation": "rs",
+            "factor": "0.000000000000000000000000001"
+        },
+        {
+            "fullName": "quectosecond",
+            "abbreviation": "qs",
+            "factor": "0.000000000000000000000000000001"
         }
     ]
 }

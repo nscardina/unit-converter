@@ -1,10 +1,14 @@
 {
-    "primaryUnitCategory": "metric",
+    "primaryUnitCategory": "sexagesimal",
     "unit1": "second",
     "unit2": "hour",
     "categories": [
         {
             "name": "metric",
+            "factor": "1"
+        },
+        {
+            "name": "sexagesimal",
             "factor": "1"
         }
     ]

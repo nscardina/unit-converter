@@ -1,0 +1,125 @@
+{
+    "primaryUnit": "second",
+    "units": [
+        {
+            "fullName": "second",
+            "abbreviation": "s",
+            "factor": "1"
+        },
+        {
+            "fullName": "minute",
+            "abbreviation": "min",
+            "factor": "60"
+        },
+        {
+            "fullName": "hour",
+            "abbreviation": "hr",
+            "factor": "60 * 60"
+        },
+        {
+            "fullName": "day",
+            "abbreviation": "d",
+            "factor": "60 * 60 * 24"
+        },
+        {
+            "fullName": "fortnight",
+            "abbreviation": "fortnight",
+            "factor": "60 * 60 * 24 * 14"
+        },
+        {
+            "fullName": "month (Jan)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 31"
+        },
+        {
+            "fullName": "month (Feb, non-leap year)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 28"
+        },
+        {
+            "fullName": "month (Feb, leap year)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 29"
+        },
+        {
+            "fullName": "month (Mar)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 31"
+        },
+        {
+            "fullName": "month (Apr)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 30"
+        },
+        {
+            "fullName": "month (May)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 31"
+        },
+        {
+            "fullName": "month (Jun)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 30"
+        },
+        {
+            "fullName": "month (Jul)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 31"
+        },
+        {
+            "fullName": "month (Aug)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 31"
+        },
+        {
+            "fullName": "month (Sep)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 30"
+        },
+        {
+            "fullName": "month (Oct)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 31"
+        },
+        {
+            "fullName": "month (Nov)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 30"
+        },
+        {
+            "fullName": "month (Dec)",
+            "abbreviation": "mo",
+            "factor": "60 * 60 * 24 * 31"
+        },
+        {
+            "fullName": "common year",
+            "abbreviation": "yr",
+            "factor": "60 * 60 * 24 * 365"
+        },
+        {
+            "fullName": "leap year",
+            "abbreviation": "yr",
+            "factor": "60 * 60 * 24 * 366"
+        },
+        {
+            "fullName": "Gregorian year",
+            "abbreviation": "yr",
+            "factor": "60 * 60 * 24 * 365 + 60 * 60 * 5 + 60 * 49 + 12"
+        },
+        {
+            "fullName": "decade",
+            "abbreviation": "decade",
+            "factor": "(60 * 60 * 24 * 365 + 60 * 60 * 5 + 60 * 49 + 12) * 10"
+        },
+        {
+            "fullName": "century",
+            "abbreviation": "century",
+            "factor": "(60 * 60 * 24 * 365 + 60 * 60 * 5 + 60 * 49 + 12) * 100"
+        },
+        {
+            "fullName": "millenium",
+            "abbreviation": "millenium",
+            "factor": "(60 * 60 * 24 * 365 + 60 * 60 * 5 + 60 * 49 + 12) * 1000"
+        }
+    ]
+}
