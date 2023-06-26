@@ -2,70 +2,36 @@ const {execSync} = require('child_process')
 const path = require('path')
 const fs = require('fs')
 
+/**
+ * List of all dependencies as paths to their node_modules folders, separated by newline characters.
+ */
 const deps = execSync('npm ls --parseable=true --omit=dev --all', {pipe: 'inherit'}).toString()
 
+/**
+ * HTML file to write, located at the project folder /src/credits/index.html.
+ */
 const htmlFile = path.resolve(__dirname, '..', 'src', 'credits', 'index.html')
 const htmlFileStream = fs.createWriteStream(htmlFile)
 
 htmlFileStream.write(`
 <!DOCTYPE html>
 <html>
-<head>
-  <meta charset="UTF-8" />
-  <link rel="stylesheet" type="text/css" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css" />
-  <link rel="stylesheet" type="text/css" href="../index.css" />
-  <link rel="stylesheet" type="text/css" href="../App.css" />
-  
-  <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png" />
-  <link rel="shortcut icon" href="/icons/favicon.ico" />
 
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Unit Converter</title>
-</head>
-<body>
+<% const pathToRoot = "../" %>
+<% const pathToNodeModules = "../../" %>
+<% const extraCSS = ["../index.css", "../App.css"] %>
+
+<%- include("./partial/head.partial.html", {
+  pathToRoot: pathToRoot, 
+  pathToNodeModules: pathToNodeModules,
+  extraCSS: extraCSS
+}) %>
+
 <body>
   <div class="root-container" >
-    <nav class="navbar d-flex flex-row">
-      <div class="d-flex flex-row  container-fluid">
-        <a class="navbar-text nav-link" href="/unit-converter/">
-          <object data="/unit-converter/logo.svg" type="image/svg+xml" width="48pt" height="48pt"></object>
-        </a>
-        <a class="navbar-text nav-link fs-4 mx-2" href="/unit-converter/">
-          Unit Converter
-        </a>
-
-        <a class="navbar-text nav-link ms-auto" href="/unit-converter/docs/">
-          <i class="bi-question-circle"></i>
-        </a>
-
-        <div class="dropdown">
-          <button class="btn dropdown-toggle mx-2" type="button" data-bs-toggle="dropdown">
-            <span class="navbar-toggler-icon"></span>
-
-          </button>
-          <ul class="dropdown-menu dropdown-menu-end">
-            <li class="dropdown-item">
-              <a href="/unit-converter/docs/" class="text-reset text-decoration-none">
-			  	<i class="bi bi-file-earmark-text"></i>&nbsp;Documentation
-			  </a>
-            </li>
-            <li class="dropdown-item">
-              <a href="/unit-converter/credits/" class="text-reset text-decoration-none">
-			  	<i class="bi bi-people-fill"></i>&nbsp;Credits
-			  </a>
-            </li>
-          </ul>
-        </div>
-
-
-      </div>
-    </nav>
-    <noscript class="d-block container ms-auto me-auto">
-      <h1 class="text-center">Javascript is not enabled.</h1>
-      <p class="text-center">The Unit Converter needs JavaScript to work.</p>
-    </noscript>
+    
+    <%- include("./partial/navbar.partial.html") %>
+    <%- include("./partial/noscript.partial.html") %>
     <div id="root"></div>
 
     <div class="accordion">
@@ -89,7 +55,6 @@ for (const dep of deps.split('\n')) {
     <pre>`
     )
 
-    // htmlFileStream.write(`<h2>${dep.substring(dep.lastIndexOf('/') + 1)}</h2>`)
     if (fs.existsSync(path.resolve(dep, 'license')))
         htmlFileStream.write(`${fs.readFileSync(path.resolve(dep, 'license'))}`)
     else if (fs.existsSync(path.resolve(dep, 'LICENSE')))
@@ -155,7 +120,6 @@ SOFTWARE.`)
 
 htmlFileStream.write(`
 </div>
-<script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.js" type="module"></script>
 </body>
 </html>
 `)

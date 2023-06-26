@@ -1,10 +1,14 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
+import {ViteEjsPlugin} from 'vite-plugin-ejs'
 import { fileURLToPath } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    ViteEjsPlugin()
+  ],
   base: '/unit-converter/',
   root: 'src',
 
@@ -19,6 +23,8 @@ export default defineConfig({
     outDir: '../dist',
     target: 'es2022'
   },
+
+  envDir: '.',
 
   assetsInclude: [
     '/node_modules/bootstrap/dist/js/bootstrap.bundle.js'
