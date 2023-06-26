@@ -1,8 +1,7 @@
-"use strict";
+"use strict"
 
-import { parseExpression } from "./expression/expression";
-import gcd from "./gcd";
-import { canBeConvertedToBigInt, canBeConvertedToFraction, isDecimalString } from "./utils";
+import gcd from "./gcd"
+import { canBeConvertedToBigInt, canBeConvertedToFraction, isDecimalString } from "./utils"
 
 /**
  * The `Fraction` class represents a mathematical fraction. Like a mathematical fraction, it contains `numerator` and 
@@ -401,17 +400,14 @@ class Fraction {
 
         let strNumerator = this.numerator.toString()
         let strDenominator = this.denominator.toString()
-
-        let absNum: bigint = 0n
+ 
         let absDen: bigint = 0n
 
         const negative = strNumerator.startsWith('-') !== strDenominator.startsWith('-')
         if (strNumerator.startsWith('-')) {
             strNumerator = strNumerator.substring(1)
-            absNum = -this.numerator
-        } else {
-            absNum = this.numerator
-        }
+        } 
+
         if (strDenominator.startsWith('-')) {
             strDenominator = strDenominator.substring(1)
             absDen = -this.denominator

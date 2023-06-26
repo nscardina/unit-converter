@@ -1,4 +1,4 @@
-class UnmatchedParenthesisError extends Error {
+export default class UnmatchedParenthesisError extends Error {
 
     constructor(message: string) {
         super(message)

@@ -1,4 +1,4 @@
-class InvalidTokenError extends Error {
+export default class InvalidTokenError extends Error {
 
     constructor(message: string) {
         super(message)

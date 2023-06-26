@@ -1,4 +1,4 @@
-class EvaluationError extends Error {
+export default class EvaluationError extends Error {
 
     constructor(message: string) {
         super(message)

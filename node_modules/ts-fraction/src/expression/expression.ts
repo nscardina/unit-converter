@@ -1,6 +1,10 @@
 import TokenType from "./tokentype"
 import Fraction from "../fraction"
 
+import InvalidTokenError from "./invalid_token_error"
+import UnmatchedParenthesisError from "./unmatched_parenthesis_error"
+import EvaluationError from ".//evaluation_error"
+
 import type { TokenTypeInstance } from "./tokentype"
 
 /**

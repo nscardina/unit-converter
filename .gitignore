@@ -421,5 +421,5 @@ FodyWeavers.xsd
 *.sln.iml
 
 # Other files (generated files)
-credits/index.html
+src/credits/index.html
 dist/**/*
