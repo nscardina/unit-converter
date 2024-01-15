@@ -8,7 +8,7 @@
     "build": "node build/build_credits.cjs && tsc && vite build src --emptyOutDir",
     "lint": "eslint src --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "npm run build && cd dist && npx http-server -o /unit-converter/",
-    "deploy": "npx gh-pages -d dist"
+    "deploy": "npx gh-pages -d dist/unit-converter"
   },
   "dependencies": {
     "@types/node": "^20.3.1",
