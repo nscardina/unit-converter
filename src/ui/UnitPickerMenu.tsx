@@ -12,6 +12,8 @@ interface Props {
 
 export default function UnitPickerMenu({ unit, unitTypeName, onClickHandler, correspondingMenuRef }: Props) {
 
+    console.log(Units[unitTypeName])
+
     return (
         <>
             <Dropdown>
@@ -20,7 +22,7 @@ export default function UnitPickerMenu({ unit, unitTypeName, onClickHandler, cor
                 </Dropdown.Toggle>
                 <Dropdown.Menu>
                     {Units[unitTypeName]!.categories.map(category => (
-                        <Dropdown drop="end" className="dropright" key={category.primaryUnit.fullName}>
+                        <Dropdown drop="end" className="dropright" key={`${category.primaryUnit.fullName}-${category.name}`}>
                             <Dropdown.Toggle variant="custom">
                                 {capitalizeFirstLetter(category.name)}
                             </Dropdown.Toggle>
