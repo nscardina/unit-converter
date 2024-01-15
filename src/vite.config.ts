@@ -14,17 +14,17 @@ export default defineConfig(({command}) => {
     ],
     
     base: '/unit-converter/',
-    root: (command === "serve") ? "./src" : "./",
+    root: (command === "serve") ? "./" : "../",
   
     build: {
       rollupOptions: {
         input: {
-          main: fileURLToPath(new URL('./src/index.html', import.meta.url)),
-          docs: fileURLToPath(new URL('./src/docs/index.html', import.meta.url)),
-          credits: fileURLToPath(new URL('./src/credits/index.html', import.meta.url))
+          main: fileURLToPath(new URL('./index.html', import.meta.url)),
+          docs: fileURLToPath(new URL('./docs/index.html', import.meta.url)),
+          credits: fileURLToPath(new URL('./credits/index.html', import.meta.url))
         }
       },
-      outDir: 'dist',
+      outDir: '../dist/unit-converter/',
       target: 'es2022'
     },
   
