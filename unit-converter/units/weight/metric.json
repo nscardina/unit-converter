@@ -1,0 +1,130 @@
+{
+    "primaryUnit": "gram",
+    "units": [
+        {
+            "fullName": "quectogram",
+            "abbreviation": "qg",
+            "factor": "0.000000000000000000000000000001"
+        },
+        {
+            "fullName": "rontogram",
+            "abbreviation": "yg",
+            "factor": "0.000000000000000000000000001"
+        },
+        {
+            "fullName": "yoctogram",
+            "abbreviation": "yg",
+            "factor": "0.000000000000000000000001"
+        },
+        {
+            "fullName": "zeptogram",
+            "abbreviation": "zg",
+            "factor": "0.000000000000000000001"
+        },
+        {
+            "fullName": "attogram",
+            "abbreviation": "ag",
+            "factor": "0.000000000000000001"
+        },
+        {
+            "fullName": "femtogram",
+            "abbreviation": "fg",
+            "factor": "0.000000000000001"
+        },
+        {
+            "fullName": "picogram",
+            "abbreviation": "pg",
+            "factor": "0.000000000001"
+        },
+        {
+            "fullName": "nanogram",
+            "abbreviation": "ng",
+            "factor": "0.000000001"
+        },
+        {
+            "fullName": "microgram",
+            "abbreviation": "μg",
+            "factor": "0.000001"
+        },
+        {
+            "fullName": "milligram",
+            "abbreviation": "mg",
+            "factor": "0.001"
+        },
+        {
+            "fullName": "centigram",
+            "abbreviation": "cg",
+            "factor": "0.01"
+        },
+        {
+            "fullName": "decigram",
+            "abbreviation": "dg",
+            "factor": "0.1"
+        },
+        {
+            "fullName": "gram",
+            "abbreviation": "g",
+            "factor": "1"
+        },
+        {
+            "fullName": "decagram",
+            "abbreviation": "dg",
+            "factor": "10"
+        },
+        {
+            "fullName": "hectogram",
+            "abbreviation": "hg",
+            "factor": "100"
+        },
+        {
+            "fullName": "kilogram",
+            "abbreviation": "kg",
+            "factor": "1000"
+        },
+        {
+            "fullName": "megagram (metric ton)",
+            "abbreviation": "Mg / t",
+            "factor": "1000000"
+        },
+        {
+            "fullName": "gigagram",
+            "abbreviation": "Gg",
+            "factor": "1000000000"
+        },
+        {
+            "fullName": "teragram",
+            "abbreviation": "Tg",
+            "factor": "1000000000000"
+        },
+        {
+            "fullName": "petagram",
+            "abbreviation": "Pg",
+            "factor": "1000000000000000"
+        },
+        {
+            "fullName": "exagram",
+            "abbreviation": "Eg",
+            "factor": "1000000000000000000"
+        },
+        {
+            "fullName": "zettagram",
+            "abbreviation": "Zg",
+            "factor": "1000000000000000000000"
+        },
+        {
+            "fullName": "yottagram",
+            "abbreviation": "Yg",
+            "factor": "1000000000000000000000000"
+        },
+        {
+            "fullName": "ronnagram",
+            "abbreviation": "Rg",
+            "factor": "1000000000000000000000000000"
+        },
+        {
+            "fullName": "quettagram",
+            "abbreviation": "Qg",
+            "factor": "1000000000000000000000000000000"
+        }
+    ]
+}
