@@ -1,4 +1,5 @@
 @import url('../node_modules/bootstrap-icons/font/bootstrap-icons.css');
+@import url("../node_modules/bootstrap/dist/css/bootstrap.min.css");
 
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
@@ -30,8 +31,7 @@ nav {
 }
 
 .dropdown-menu {
-  backdrop-filter: blur(20pt);
-  background-color: rgba(0, 0, 0, 0);
+  background-color: rgb(255, 255, 255);
   min-width: 0px;
 }
 

@@ -1,24 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<% const pathToRoot = "./" %>
-<% const pathToNodeModules = "../" %>
-<% const extraCSS = [] %>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<%- include("./partial/head.partial.html", {
-  pathToRoot: pathToRoot, 
-  pathToNodeModules: pathToNodeModules,
-  extraCSS: extraCSS
-}) %>
+  <%- include(`${env.VITE_ROOT_PATH}/partial/icons.partial.html`) %>
 
-<body>
-  <div class="root-container">
-    <%- include("./partial/navbar.partial.html") %>
-    <%- include("./partial/noscript.partial.html") %>
-    <div id="root"></div>
-  </div>
-  <script type="module" src="/main.tsx"></script>
-  
-</body>
+  <title>Unit Converter</title>
+</head>
+
+  <body>
+    <div class="root-container">
+      <%- include(`${env.VITE_ROOT_PATH}/partial/navbar.partial.html`) %>
+      <%- include(`${env.VITE_ROOT_PATH}/partial/noscript.partial.html`) %>
+      <div id="root"></div>
+    </div>
+
+    <script type="module" src="./main.tsx"></script>
+    <script type="module" src="./bootstrap_imports.tsx"></script>
+
+  </body>
 
 </html>

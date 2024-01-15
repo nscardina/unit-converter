@@ -1,6 +1,8 @@
 const {execSync} = require('child_process')
 const path = require('path')
 const fs = require('fs')
+const os = require('os')
+const process = require('process')
 
 /**
  * List of all dependencies as paths to their node_modules folders, separated by newline characters.
@@ -17,22 +19,27 @@ htmlFileStream.write(`
 <!DOCTYPE html>
 <html>
 
-<% const pathToRoot = "../" %>
-<% const pathToNodeModules = "../../" %>
-<% const extraCSS = ["../index.css", "../App.css"] %>
+<head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <%- include(\`\${env.VITE_ROOT_PATH}/partial/icons.partial.html\`) %>
 
-<%- include("./partial/head.partial.html", {
-  pathToRoot: pathToRoot, 
-  pathToNodeModules: pathToNodeModules,
-  extraCSS: extraCSS
-}) %>
+        <link rel="stylesheet" href="../App.css" type="text/css">
+        <link rel="stylesheet" href="../index.css" type="text/css">
+    
+        <title>Credits - Unit Converter</title>
+    </head>
 
 <body>
   <div class="root-container" >
     
-    <%- include("./partial/navbar.partial.html") %>
-    <%- include("./partial/noscript.partial.html") %>
+    <%- include(\`\${env.VITE_ROOT_PATH}/partial/navbar.partial.html\`) %>
+    <%- include(\`\${env.VITE_ROOT_PATH}/partial/noscript.partial.html\`) %>
     <div id="root"></div>
+
+    <p>The following dependencies have been used to build this application. Their licenses are included below
+    for your reference. (Development dependencies have not been included in this list.)</p>
 
     <div class="accordion">
 `)
@@ -63,28 +70,10 @@ for (const dep of deps.split('\n')) {
         htmlFileStream.write(`${fs.readFileSync(path.resolve(dep, 'LICENSE.txt'))}`)
     else if (fs.existsSync(path.resolve(dep, 'LICENSE.md')))
         htmlFileStream.write(`${fs.readFileSync(path.resolve(dep, 'LICENSE.md'))}`)
-    else if (dep === '/home/ns/unit-converter/node_modules/@types/warning') {
-        htmlFileStream.write(`Copyright (c) Chi Vinh Le
+    else if (dep === `${os.homedir()}/unit-converter/node_modules/undici-types`) {
+        htmlFileStream.write(`MIT License
 
-Permission is hereby granted, free of charge, to any person obtaining a copy
-of this software and associated documentation files (the "Software"), to deal
-in the Software without restriction, including without limitation the rights
-to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.`)
-    } else if (dep === '/home/ns/unit-converter/node_modules/@swc/helpers') {
-        htmlFileStream.write(`Copyright (c) 강동윤
+Copyright (c) Matteo Collina and Undici contributors
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -105,6 +94,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.`)
     } else {
         console.log(`License not found: ${dep}`)
+        process.exit(1)
     }
 
     htmlFileStream.write(`
@@ -120,6 +110,7 @@ SOFTWARE.`)
 
 htmlFileStream.write(`
 </div>
+<script type="module" src="../bootstrap_imports.tsx"></script>
 </body>
 </html>
 `)

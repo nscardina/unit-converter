@@ -1,20 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<% const pathToRoot = "../" %>
-<% const pathToNodeModules = "../../" %>
-<% const extraCSS = ["../index.css", "../App.css"] %>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+        <%- include(`${env.VITE_ROOT_PATH}/partial/icons.partial.html`) %>
 
-<%- include("./partial/head.partial.html", {
-  pathToRoot: pathToRoot,
-  pathToNodeModules: pathToNodeModules,
-  extraCSS: extraCSS
-}) %>
+        <link rel="stylesheet" href="../App.css" type="text/css">
+        <link rel="stylesheet" href="../index.css" type="text/css">
+    
+        <title>Documentation - Unit Converter</title>
+    </head>
 
 <body>
   <div class="root-container" >
-    <%- include("./partial/navbar.partial.html") %>
-    <%- include("./partial/noscript.partial.html") %>
+    <%- include(`${env.VITE_ROOT_PATH}/partial/navbar.partial.html`) %>
+    <%- include(`${env.VITE_ROOT_PATH}/partial/noscript.partial.html`) %>
     <div id="root"></div>
 
     <div>
@@ -49,6 +51,7 @@
         <p>
             <a href="/unit-converter/">Return to Unit Converter</a>
         </p>
+        <script type="module" src="../bootstrap_imports.tsx"></script>
     </div>
   </div>
   
