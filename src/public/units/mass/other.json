@@ -1,0 +1,30 @@
+{
+    "primaryUnit": "kilogram",
+    "units": [
+        {
+            "fullName": "kilogram",
+            "abbreviation": "kg",
+            "factor": "1"
+        },
+        {
+            "fullName": "slug",
+            "abbreviation": "sl",
+            "factor": "14.6"
+        },
+        {
+            "fullName": "pound (pound-mass)",
+            "abbreviation": "lb",
+            "factor": "0.45"
+        },
+        {
+            "fullName": "Planck mass",
+            "abbreviation": "mₚ",
+            "factor": "2.18 / 100000000"
+        },
+        {
+            "fullName": "solar mass",
+            "abbreviation": "M☉",
+            "factor": "1.99 * 1000000000000000000000000000000"
+        }
+    ]
+}

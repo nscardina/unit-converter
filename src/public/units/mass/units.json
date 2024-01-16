@@ -6,6 +6,14 @@
         {
             "name": "metric",
             "factor": "1"
+        },
+        {
+            "name": "Non-SI accepted",
+            "factor": "1"
+        },
+        {
+            "name": "other",
+            "factor": "1000"
         }
     ]
 }

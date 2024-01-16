@@ -1,0 +1,20 @@
+{
+    "primaryUnit": "gram",
+    "units": [
+        {
+            "fullName": "gram",
+            "abbreviation": "g",
+            "factor": "1"
+        },
+        {
+            "fullName": "electronvolt (eV/c²)",
+            "abbreviation": "eV/c²",
+            "factor": "1.78266192 / 1000000000000000000000000000000000"
+        },
+        {
+            "fullName": "dalton",
+            "abbreviation": "Da",
+            "factor": "1.66053906660 / 1000000000000000000000000"
+        }
+    ]
+}
